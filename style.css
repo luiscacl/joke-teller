@@ -1,0 +1,222 @@
+/* ROBOT.GIF from Giphy - https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY */
+/* UNIDAD DE MEDIDA VH - VW */
+/* vh = viewportHeight. Esta unidad esta basada en el alto de vista de la ventana, El valor de 1vh es equivalente al 1% del del alto del área 
+de visualización. Mientras que 100vh equivale al 100% del alto de área de visualización.
+vw = viewportWidth. Esta unidad esta basada en el ancho de vista de la ventana, El valor de 1vw es equivalente al 1% del del ancho del área de 
+visualización. Mientras que 100vw equivale al 100% del ancho de área de visualización.*/
+
+* {
+  box-sizing: border-box;
+}
+
+/* CAMBIAR EL COLOR Y AÑADIR BORDES A LOS CONTENEDORES PARA VER EL COMPORTAMIENTO DE DISPLAY */
+body{
+  margin: 0;
+  background-color: #45badd;
+  /* background-color: blue; */
+}
+
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 350px 1fr;
+}
+/* LOS 3 DIVS PRINCIPALES SE LES AGREGA DISPLAY FLEX */
+.main-container > div {
+  /* border: 3px solid black; */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Imagen GIF */
+/* -------------------------------------------------- */
+#container-image {
+  overflow: hidden;
+  justify-self: flex-start;
+}
+#container-image-two {
+  /* border: 3px solid black; */
+  height: 25rem;
+  width: 17rem;
+  overflow: hidden;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container-image img {
+  height: 150%;
+  width: 290%;
+  z-index: -1;
+}
+
+/* Contenedor de voz */
+/* -------------------------------------------------- */
+#main-container-voice{
+  /* border: 3px solid black; */
+  justify-self: end;
+}
+#second-container-voice {
+  border: 7px solid rgb(52, 116, 153);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 20rem;
+  height: 35rem;
+  background-color: rgb(21, 58, 114);
+  color: white;
+  margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+}
+.form-group {
+  /*PROBLEMA QUE TUVE USANDO FLEX. Cuando centraba los elementos no me fije que el margen lo tenian en auto, por lo que se centraban tomando 
+  todo el espacio del contenedor */
+  /* margin: auto; */
+  /* border: 3px solid black; */
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: rgb(32, 173, 173); */
+}
+.form-group img {
+  width: 5rem;
+  margin-bottom: 0.7rem;
+}
+.form-group textarea {
+  height: 8rem;
+  border-radius: 7px;
+  background-color: rgb(226, 226, 226);
+}
+
+.container-rate {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#voice-select {
+  height: 1.7rem;
+}
+
+[for="rate"],
+[for="pitch"] {
+  font-size: 1.3rem;
+}
+
+/* Botón tell me a joke */
+/* -------------------------------------------------- */
+button {
+  cursor: pointer; /*Es para que cuando el cursor señale al botón el mouse cambie de imagen*/
+  outline: none; /*Elimina el borde del botón que aparece al darle click*/
+  width: 200px; /*Tamaño del botón*/
+  height: 50px;
+  font-family: Courier, monospace;
+  font-size: 20px; /*Tamaño del texto*/
+  color: white;
+  background: #ff3482;
+  border: none; /*Elimina el borde del botón*/
+  border-radius: 5px; /*Hace que el botón tenga esquinar redondas*/
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.5); /*Crea una sombra en el botón*/
+}
+
+button:hover {
+  filter: brightness(95%); /*Es un evento que se ejecuta cuando el mouse está sobre algún elemento*/
+}
+
+button:active {
+  transform: scale(0.98); /*Es un evento que se ejecuta cuando se le da click a algún elemento*/
+}
+
+button:disabled {
+  cursor: default;
+  filter: brightness(30%);
+}
+
+.scrat-gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  width: 20rem;
+  height: 10rem;
+  /* border: 3px solid black; */
+}
+.scrat-gif img {
+  width: 130%;
+  height: 137%;
+}
+
+/* Media Query: Tablet or Smaller */
+@media screen and (max-width: 790px) {
+  /* Contenedor de los 3 divs principales */
+  .main-container {
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Contenedor de voz */
+  /* -------------------------------------------------- */
+  #main-container-voice {
+    grid-row: span 2;
+    width: 100%;
+    align-self: center;
+    height: 42rem;
+  }
+  #second-container-voice {
+    margin: 0;
+    height: 34rem;
+  }
+
+  /* Botón tell me a joke */
+  /* -------------------------------------------------- */
+  #container-button {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-content: end;
+  }
+
+  /* Imagen GIF */
+  /* -------------------------------------------------- */
+  /* Aquí se ve cómo utilizo propiedades del grid como item, y flex como contenedor */
+  #container-image {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-content: right;
+    align-items: flex-start;
+    flex-direction: row;
+    overflow: visible;
+  }
+  /* El segundo div de la imágen vuelve a tener un display de flex para poder posicionar bien a la imagen */
+  #container-image-two {
+    height: 21rem;
+    width: 21rem;
+    overflow: hidden;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #container-image img {
+    height: 150%;
+    width: 190%;
+    z-index: -1;
+  }
+}
