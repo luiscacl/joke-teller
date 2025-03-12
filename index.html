@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template</title>
-    <link rel="icon" type="image/png" href="/4°jokeTeller/images/favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-container">
-        <div id="main-container-voice">
-            <div id="second-container-voice">
-                <div class="form-group">
-                    <img src="/4°jokeTeller/images/speaker.png"/>
-                    <textarea id="text-input" placeholder="Type anything..."></textarea>
-                </div>
-                <div class="form-group">
-                    <div class="container-rate">
-                        <label for="rate">Rate</label>
-                        <div id="rate-value">1</div>
-                    </div>
-                    <input type="range" id="rate" min="0.5" max="2" value="1" step="0.1"/>
-                </div>
-                <div class="form-group">
-                    <div class="container-rate">
-                        <label for="pitch">Tone</label>
-                        <div id="pitch-value">1</div>
-                    </div>
-                    <input type="range" id="pitch" min="0" max="2" value="1" step="0.1"/>
-                </div>
-                <div class="form-group">
-                    <select id="voice-select"></select>
-                </div>
-                <div class="form-group">
-                    <button id="speak-button">Speak it</button>
-                </div>
+      <div id="main-container-voice">
+        <div id="second-container-voice">
+          <div class="form-group">
+            <img
+              src="https://res.cloudinary.com/dftslwu7s/image/upload/v1741794204/speaker_skb4me.png"
+            />
+            <textarea id="text-input" placeholder="Type anything..."></textarea>
+          </div>
+          <div class="form-group">
+            <div class="container-rate">
+              <label for="rate">Rate</label>
+              <div id="rate-value">1</div>
             </div>
-        </div>
-        <div id="container-button">
-            <div style="display: none;" class="scrat-gif">
-                <img src="/4°jokeTeller/images/scratGif.gif"/>
+            <input
+              type="range"
+              id="rate"
+              min="0.5"
+              max="2"
+              value="1"
+              step="0.1"
+            />
+          </div>
+          <div class="form-group">
+            <div class="container-rate">
+              <label for="pitch">Tone</label>
+              <div id="pitch-value">1</div>
             </div>
-            <button id="joke-button">Tell Me a Joke!</button>
+            <input
+              type="range"
+              id="pitch"
+              min="0"
+              max="2"
+              value="1"
+              step="0.1"
+            />
+          </div>
+          <div class="form-group">
+            <select id="voice-select"></select>
+          </div>
+          <div class="form-group">
+            <button id="speak-button">Speak it</button>
+          </div>
         </div>
-        <div id="container-image">
-            <div id="container-image-two">
-                <img src="/4°jokeTeller/images/robot.gif"/>
-            </div>
+      </div>
+      <div id="container-button">
+        <div style="display: none" class="scrat-gif">
+          <img
+            src="https://res.cloudinary.com/dftslwu7s/image/upload/v1741794204/scratGif_thbxm2.gif"
+          />
         </div>
+        <button id="joke-button">Tell Me a Joke!</button>
+      </div>
+      <div id="container-image">
+        <div id="container-image-two">
+          <img
+            src="https://res.cloudinary.com/dftslwu7s/image/upload/v1741794204/robot_ohhe6g.gif"
+          />
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
